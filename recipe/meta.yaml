@@ -1,5 +1,5 @@
 {% set name = "genai" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/genai-{{ version }}.tar.gz
-  sha256: 96defbf72e08f20e3b756f9cf337a58667edfe0d9a1be8fcad01efce93d7efca
+  sha256: 71abe894703d2a097148fd08152bedd3f320598536317dc0cd9bee69e9f87314
 
 build:
   noarch: python

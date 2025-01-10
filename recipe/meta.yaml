@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/genai-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/genai-{{ version }}.tar.gz
   sha256: 96defbf72e08f20e3b756f9cf337a58667edfe0d9a1be8fcad01efce93d7efca
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - poetry-core >=1.0.1
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - openai >=0.27.0
     - vdom >=0.6
     - ipython >=8.10.0
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Generative AI for IPython (enhance your code cells)
